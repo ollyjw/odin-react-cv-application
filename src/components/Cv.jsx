@@ -11,21 +11,51 @@ function Cv({data}) {
                 <p>Phone: {data.generalInfo.phone}</p>
             </div>
             <div className="container education">
-                <h2>Education</h2>
+                <div className="section-header">
+                    <h3>Education</h3>
+                </div>
                 {data.education.map((item) => (
                     <div key={item.id}>
-                        <p>{item.school}</p>
+                        <p>School: {item.school}</p>
+                        <p>Subject: {item.subject}</p>
+                        <p>Date: {item.dates}</p>
                     </div>
                 ))}
             </div>
             <div className="container work-exp">
-                <h2>Work experience</h2>
+                <div className="section-header">
+                    <h3>Work experience</h3>
+                </div>
+                {data.workExp.map((item) => (
+                    <div key={item.id}>
+                        <p>Company: {item.company}</p>
+                        <p>Position: {item.subject}</p>
+                        <p>Description: {item.description}</p>
+                        <p>Dates worked: {item.dates}</p>
+                    </div>
+                ))}
             </div>
             <div className="container skills">
-                <h2>Skills</h2>
+                <div className="section-header">
+                    <h3>Skills</h3>
+                </div>
+                {data.skills.map((item) => (
+                    <div key={item.id}>
+                        <p>{item.skill}</p>                        
+                    </div>
+                ))}
             </div>
             <div className="container refs">
-                <h2>References</h2>
+                <div className="section-header">
+                    <h3>References</h3>
+                </div>                    
+                {data.references.map((item) => (
+                    <div key={item.id}>
+                        <p>Company: {item.name}</p>
+                        <p>Position: {item.jobTitle}</p>
+                        <p>Description: {item.email}</p>
+                    </div>
+                ))}
             </div>
         </div>
     )
