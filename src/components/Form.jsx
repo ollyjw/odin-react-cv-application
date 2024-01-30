@@ -3,9 +3,9 @@ import "../styles/form.css"
 
 // Data entry structure
 
-function Information({data, setData}) {
+function Form({data, setData}) {
     return (
-        <div className="container-info">
+        <div className="form-container">
             <form onSubmit={e => e.preventDefault()}>
                 <Section title={"General Information"} data={data} setData={setData} />
                 <Section title={"Education"} data={data} setData={setData} />
@@ -17,4 +17,4 @@ function Information({data, setData}) {
     )
 }
 
-export default Information;
+export default Form;
