@@ -210,40 +210,38 @@ function Section({ title, data, setData }) {
 
     if (title === "General Information") {
         return (           
-            <div className="container gen-info-entry">
-                <div className="header">
-                    <h2>{title}</h2>
-                    <div>
-                        <label htmlFor="">Name</label>
-                        <input 
-                            type="text"
-                            value={data.generalInfo.name}
-                            onChange={handleNameChange}
-                        />
-                    </div>
-                    <div>
-                        <label htmlFor="">Email</label>
-                        <input 
-                            type="text"
-                            value={data.generalInfo.email}
-                            onChange={handleEmailChange}
-                        />
-                    </div>
-                    <div>
-                        <label htmlFor="">Phone</label>
-                        <input 
-                            type="text"
-                            value={data.generalInfo.phone}
-                            onChange={handlePhoneChange}
-                        />
-                    </div>
+            <div className="section gen-info-entry">
+                <h2 className="form-heading">{title}</h2>
+                <div>
+                    <label htmlFor="">Name</label>
+                    <input 
+                        type="text"
+                        value={data.generalInfo.name}
+                        onChange={handleNameChange}
+                    />
                 </div>
+                <div>
+                    <label htmlFor="">Email</label>
+                    <input 
+                        type="text"
+                        value={data.generalInfo.email}
+                        onChange={handleEmailChange}
+                    />
+                </div>
+                <div>
+                    <label htmlFor="">Phone</label>
+                    <input 
+                        type="text"
+                        value={data.generalInfo.phone}
+                        onChange={handlePhoneChange}
+                    />
+                </div>                
             </div>
         )
     } else if (title === "Education") {
         return (            
-            <div className="container education-entry">
-                <h2>{title}</h2>
+            <div className="section education-entry">
+                <h2 className="form-heading">{title}</h2>
                 {data.education.map((item) => {
                     return (
                         <div key={item.id}>
@@ -277,13 +275,14 @@ function Section({ title, data, setData }) {
                         </div>
                     )
                 })}
-                <button onClick={addEducationSection}>Add education</button>
+                <button className="submit-btn" onClick={addEducationSection}>Add education</button>
             </div>           
         )
     } else if (title === "Work Experience") {
         return (
             <>
-                <h2>{title}</h2>
+            <div className="section work-entry">
+                <h2 className="form-heading">{title}</h2>
                 {data.workExp.map((item) => {
                     return (
                         <div key={item.id}>
@@ -326,14 +325,16 @@ function Section({ title, data, setData }) {
                         </div>
                     )
                 })}
-                <button onClick={addWorkSection}>Add work experience</button>
+                <button className="submit-btn" onClick={addWorkSection}>Add work experience</button>
+                </div>
             </>
         )
     } else if (title === "Skills") {
         return (
             <>
+            <div className="section">
                 <div className="skills-header">
-                    <h2>{title}</h2>
+                    <h2 className="form-heading">{title}</h2>
                 </div>
                 {data.skills.map((item) => {
                     return (
@@ -350,15 +351,16 @@ function Section({ title, data, setData }) {
                         </div>
                     )
                 })}
-                <button onClick={addSkillsSection}>Add skill</button>
-
+                <button className="submit-btn" onClick={addSkillsSection}>Add skill</button>
+                </div>
             </>
         )
     } else if (title === "References") {
         return (
             <>
+            <div className="section">
                 <div className="references-header">
-                    <h2>{title}</h2>
+                    <h2 className="form-heading">{title}</h2>
                 </div>
                 {data.references.map((item) => {
                     return (
@@ -393,7 +395,8 @@ function Section({ title, data, setData }) {
                         </div>
                     )
                 })}
-                <button onClick={addRefSection}>Add reference</button>
+                <button className="submit-btn" onClick={addRefSection}>Add reference</button>
+                </div>
             </>
         )
     }

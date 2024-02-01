@@ -12,10 +12,33 @@
     margin-top: 0;
     background-color: rgb(0, 59, 111);
     color: #fff;
+    text-align: center;
+    font-size: 1.25rem;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
 }
 
 .section-header {
     background-color: #eee;
     padding: 5px;
     text-align: center;
+    margin-bottom: 15px;
+}
+
+.info-output {
+    margin-bottom: 15px;
+    display: flex;
+    gap: 15px;
+}
+
+.info-left {
+    min-width: 150px;
+}
+
+.info-right :first-child {
+    font-weight: bold;
 }
