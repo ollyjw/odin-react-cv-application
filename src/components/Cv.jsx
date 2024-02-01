@@ -10,6 +10,7 @@ function Cv({data}) {
                 <div className="contact-info">
                     <p>Email: {data.generalInfo.email}</p>
                     <p>Phone: {data.generalInfo.phone}</p>
+                    <p>Location: {data.generalInfo.location}</p>
                 </div>
             </div>
             <div className="container education">
@@ -20,6 +21,7 @@ function Cv({data}) {
                     <div className="info-output" key={item.id}>
                         <div className="info-left">
                             <p>Date: {item.dates}</p>
+                            <p>Location: {item.location}</p>
                         </div>
                         <div className="info-right">
                             <p>School: {item.school}</p>
@@ -36,6 +38,7 @@ function Cv({data}) {
                     <div className="info-output" key={item.id}>
                         <div className="info-left">
                             <p>Dates worked: {item.dates}</p>
+                            <p>Location: {item.location}</p>
                         </div>
                         <div className="info-right">
                             <p>Company: {item.company}</p>

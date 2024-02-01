@@ -25,6 +25,13 @@ function Section({ title, data, setData }) {
         });
     }
 
+    function handleLocationChange(e) {
+        setData({
+            ...data,
+            generalInfo: { ...data.generalInfo, location: e.target.value },            
+        });
+    }
+
     // Education
 
     // Need to create new object array item for each school/workplace/skill/ref + update the id
@@ -73,6 +80,18 @@ function Section({ title, data, setData }) {
         const targetObj = data.education[targetId];
 
         targetObj.dates = e.target.value;
+
+        const newData = {...data};
+        newData.education[targetId] = targetObj;
+
+        setData(newData);
+    }
+
+    function handleSchoolLocationChange(e) {
+        const targetId = e.target.id;
+        const targetObj = data.education[targetId];
+
+        targetObj.location = e.target.value;
 
         const newData = {...data};
         newData.education[targetId] = targetObj;
@@ -139,6 +158,19 @@ function Section({ title, data, setData }) {
 
         setData(newData);
     }
+
+    function handleWorkLocationChange(e) {
+        const targetId = e.target.id;
+        const targetObj = data.workExp[targetId];
+
+        targetObj.location = e.target.value;
+
+        const newData = {...data};
+        newData.workExp[targetId] = targetObj;
+
+        setData(newData);
+    }
+    
 
     // Skills
     function addSkillsSection() {
@@ -235,7 +267,15 @@ function Section({ title, data, setData }) {
                         value={data.generalInfo.phone}
                         onChange={handlePhoneChange}
                     />
-                </div>                
+                </div>
+                <div>
+                    <label htmlFor="">Location</label>
+                    <input 
+                        type="text"
+                        value={data.generalInfo.location}
+                        onChange={handleLocationChange}
+                    />
+                </div>              
             </div>
         )
     } else if (title === "Education") {
@@ -269,6 +309,15 @@ function Section({ title, data, setData }) {
                                     type={"text"}
                                     value={item.dates}
                                     onChange={handleSchoolDatesChange}
+                                    id={item.id}
+                                />
+                            </div>
+                            <div>
+                                <label htmlFor="">Location</label>
+                                <input 
+                                    type={"text"} 
+                                    value={item.location}
+                                    onChange={handleSchoolLocationChange}
                                     id={item.id}
                                 />
                             </div>
@@ -319,6 +368,15 @@ function Section({ title, data, setData }) {
                                     type={"text"}
                                     value={item.dates}
                                     onChange={handleWorkDatesChange}
+                                    id={item.id}
+                                />
+                            </div>
+                            <div>
+                                <label htmlFor="">Location</label>
+                                <input 
+                                    type={"text"} 
+                                    value={item.location}
+                                    onChange={handleWorkLocationChange}
                                     id={item.id}
                                 />
                             </div>

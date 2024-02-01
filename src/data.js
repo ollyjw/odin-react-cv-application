@@ -3,11 +3,13 @@ const cvData = {
         name: "",
         email: "",
         phone: "",
+        location: "",
     }, 
     education: [{
         school: "",
         subject: "",
         dates: "",
+        location: "",
         id: 0,
     }], 
     workExp: [{
@@ -15,6 +17,7 @@ const cvData = {
         position: "",
         description: "",
         dates: "",
+        location: "",
         id: 0,
     }],
     skills: [{
